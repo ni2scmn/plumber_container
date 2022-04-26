@@ -7,6 +7,7 @@ jobs:
   build_image:
     runs-on: self-hosted
     steps:
+    - uses: actions/checkout@v1
     - name: Echo test
       run: |
         echo "Test1"
