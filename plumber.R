@@ -35,7 +35,6 @@ function(a, b) {
     as.numeric(a) + as.numeric(b)
 }
 
-
 ##* Draw a random Name
 #* @get /name
 function() {
