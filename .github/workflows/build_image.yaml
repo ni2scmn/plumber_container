@@ -5,7 +5,7 @@ on:
     - main
 jobs:
   build_image:
-    runs-on: alpine-latest
+    runs-on: self-hosted
     steps:
     - name: Echo test
       run: |
