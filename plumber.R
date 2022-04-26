@@ -35,13 +35,19 @@ function(a, b) {
     as.numeric(a) + as.numeric(b)
 }
 
-
-##* Draw a random Name
-#* @get /name
+#* Rand DB output
+#* @get /db
 function() {
-    sample(c("Tom", "Nils", "Jonas"), 1)
-}
+    con <- DBI::dbConnect(odbc::odbc(),
+                      Driver   = "PostgreSQL Driver",
+                      Server   = "plumber_db",
+                      Database = Sys.getenv("POSTGRES_USER"),
+                      UID      = Sys.getenv("POSTGRES_USER"),
+                      PWD      = Sys.getenv("POSTGRES_PASSWORD"),
+                      Port     = Sys.getenv("POSTGRES_PORT"))
 
+    DBI::dbReadTable(con, "test")
+}
 
 # Programmatically alter your API
 #* @plumber

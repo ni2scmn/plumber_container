@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  plumber_r:
+    image: plumberdb
+    ports:
+    - "8080:8080"
+    networks:
+      - tmp
+    environment:
+    - POSTGRES_PASSWORD=test
+    - POSTGRES_USER=me
+  plumber_db:
+    image: postgres
+    ports:
+    - "1044:5432"
+    networks:
+      - tmp
+    volumes:
+      - "pg_data:/var/lib/postgresql/data"
+    environment:
+    - POSTGRES_PASSWORD=test
+    - POSTGRES_USER=me
+networks:
+  tmp:
+volumes:
+  pg_data:
