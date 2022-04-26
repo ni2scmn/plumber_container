@@ -11,3 +11,4 @@ jobs:
       run: |
         echo "Test1"
         echo "Test2"
+        docker build -t plumbertest .
