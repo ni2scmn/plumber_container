@@ -6,9 +6,6 @@ services:
     - "8080:8080"
     networks:
       - tmp
-    environment:
-    - POSTGRES_PASSWORD=test
-    - POSTGRES_USER=me
   plumber_db:
     image: postgres
     ports:
@@ -17,9 +14,6 @@ services:
       - tmp
     volumes:
       - "pg_data:/var/lib/postgresql/data"
-    environment:
-    - POSTGRES_PASSWORD=test
-    - POSTGRES_USER=me
 networks:
   tmp:
 volumes:
