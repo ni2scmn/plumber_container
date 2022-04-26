@@ -1,0 +1,13 @@
+name: Build Image
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build_image:
+    runs-on: alpine-latest
+    steps:
+    - name: Echo test
+      run: |
+        echo "Test1"
+        echo "Test2"
